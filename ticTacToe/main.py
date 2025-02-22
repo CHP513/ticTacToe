@@ -77,8 +77,14 @@ while not gameOver:
     else:
         turn = "Player1"
 
-    if gameOver == True:
-        playAgain = input("Game Over, Play Again? Y/N: ")
+    if gameOver == True and turnNumber != 9:
+        if turn == "Player1":
+            playAgain = input("Player 1 Wins, Play Again? Y/N: ")
+        elif turn == "Player2":
+            playAgain = input("Player 2 Wins, Play Again? Y/N: ")
+
+    elif turnNumber == 9:
+        playAgain = input("It's a draw, Play Again? Y/N: ")
 
         if playAgain == 'Y':
             gametic_tac_toe = tic_tac_toe
